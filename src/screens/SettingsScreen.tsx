@@ -103,22 +103,22 @@ export const SettingsScreen = React.memo(() => {
               <View>
                 <InputLauncher
                   Icon={Icons.UnionSvg}
-                  title={'Ваш никнейм'}
+                  title={'نام شما '}
                   value={settings.userName}
                   onChangeText={onEndEditingUserName}
-                  placeholder={'Пример: Don_Corleone'}
+                  placeholder={"امیر محمد با حجب حبی"}
                 />
               </View>
               <View style={styles.switch}>
                 <SwitchLauncher
                   onValueChange={onValueChangeSnow}
                   value={+settingMode}
-                  title={'Зимняя карта'}
+                  title={'برفی'}
                 />
                 <SwitchLauncher
                   onValueChange={onValueChangeGraphic}
                   value={+settings.graphic}
-                  title={'Улучшенная графика'}
+                  title={'گرافیک بهبود'}
                 />
                 <SwitchLauncher
                   onValueChange={onValueChangeFPS}
