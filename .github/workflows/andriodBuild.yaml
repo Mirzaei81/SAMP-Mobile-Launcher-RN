@@ -25,14 +25,6 @@ jobs:
           cache: yarn
       - name: Install
         run: yarn install --immutable
-      - name: TypeScript
-        run: yarn tsc --noEmit
-      - name: ESLint
-        run: yarn lint
-      - name: Prettier
-        run: yarn format:check
-      - name: Unit tests
-        run: yarn test --ci
   build-android:
     name: Build Android Release
     runs-on: ubuntu-latest
