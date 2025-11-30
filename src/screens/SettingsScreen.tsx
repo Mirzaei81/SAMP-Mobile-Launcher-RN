@@ -123,7 +123,7 @@ export const SettingsScreen = React.memo(() => {
                 <SwitchLauncher
                   onValueChange={onValueChangeFPS}
                   value={+settings.fpscounter}
-                  title={'Счётчик FPS'}
+                  title={'شمارنده FPS'}
                 />
                 <SwitchLauncher
                   onValueChange={onValueChangeKeyboard}
@@ -133,7 +133,7 @@ export const SettingsScreen = React.memo(() => {
               </View>
               <View style={styles.range}>
                 <RangeLauncher
-                  title={'FPS в игре'}
+                  title={'FPS نرخ'}
                   minimumValue={20}
                   maximumValue={60}
                   range={settings.fpsLimit}
@@ -141,7 +141,7 @@ export const SettingsScreen = React.memo(() => {
                   onSlidingComplete={onSlidingCompleteFps}
                 />
                 <RangeLauncher
-                  title={'Количество строк в чате'}
+                  title={'تعداد خطوط در چت'}
                   minimumValue={5}
                   maximumValue={20}
                   range={settings.pageSize}
@@ -151,7 +151,7 @@ export const SettingsScreen = React.memo(() => {
               </View>
             </View>
           </ScrollView>
-          <Text style={styles.version}>Версия {APP_VERSION}</Text>
+          <Text style={styles.version}>نسخه  {APP_VERSION}</Text>
         </View>
       </MainContainer>
       <AlertUpdateMode />

@@ -123,7 +123,7 @@ export const TabBarNavigation = React.memo(() => {
         tabBarBackground: '#212231',
       }}>
       <Tabs.Screen
-        name="Донат"
+        name="کمک مالی"
         component={DonateScreen}
         options={{
           headerShown: true,
@@ -135,7 +135,7 @@ export const TabBarNavigation = React.memo(() => {
         }}
       />
       <Tabs.Screen
-        name="Играть"
+        name="بازی"
         component={GameScreen}
         options={{
           headerShown: true,
@@ -147,7 +147,7 @@ export const TabBarNavigation = React.memo(() => {
         }}
       />
       <Tabs.Screen
-        name="Настройки"
+        name="تنظیمات"
         component={SettingsScreen}
         options={{
           headerShown: true,
