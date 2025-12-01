@@ -3,9 +3,9 @@ import axios from 'axios';
 import { CacheType } from '../actions/loaderActions';
 
 export const DistributionService = {
-  async get() {
+  async get(url:string | undefined) {
     const response = await axios
-      .get<DistributionResponseType>(URL_DISTRIBUTION)
+      .get<DistributionResponseType>(url??URL_DISTRIBUTION)
       .then(res => res.data);
     return response;
   },

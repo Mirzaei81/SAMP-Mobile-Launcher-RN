@@ -17,7 +17,8 @@ buildscript {
             ndkVersion = "21.4.7075529"
         }
     }
-    repositories {
+    repositories { 
+	      maven { url 'https://maven.myket.ir' }
         google()
         mavenCentral()
     }
@@ -34,7 +35,8 @@ buildscript {
 }
 
  allprojects {
-     repositories {
+     repositories { 
+	      maven { url 'https://maven.myket.ir' }
         def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
 
         configurations.all {

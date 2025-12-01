@@ -6,4 +6,5 @@ export const selectSettingLocalhost = (state: AppStoreType) =>
 export const selectUserName = (state: AppStoreType) => state.settings.userName;
 export const selectIsSkip = (state: AppStoreType) => state.settings.skip;
 export const selectSettings = (state: AppStoreType) => state.settings;
+export const selectUrl = (state: AppStoreType) => state.settings;
 export const selectModeType = (state: AppStoreType) => state.settings.modeType;

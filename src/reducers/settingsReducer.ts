@@ -10,6 +10,7 @@ export const settingInitState = {
   fpscounter: 0,
   androidKeyboard: 0,
   localhost: 0,
+  url: "http://172.26.139.116:8080",
   skip: 0,
   modeType: -1,
 };
@@ -22,6 +23,7 @@ export const settingReducer = (
 ): SettingInitStateType => {
   switch (action.type) {
     case 'SET_SETTINGS':
+    case 'SET_SETTING_URL':
     case 'SET_SETTING_SERVER':
     case 'SET_SETTING_FPS':
     case 'SET_SETTING_PAGE_SIZE':

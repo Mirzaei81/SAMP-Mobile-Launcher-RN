@@ -7,7 +7,7 @@ import { compareFileRecursion } from './loaderThunks';
 
 export const fetchDistribution = (): AppThunk => async (dispatch, state) => {
   try {
-    const { cache: caches, ...res } = await DistributionService.get();
+    const { cache: caches, ...res } = await DistributionService.get(state().settings.url);
     await dispatch(setDistribution(res));
     if (!state().settings.skip) {
       await dispatch(compareFileRecursion({ caches }));

@@ -5,6 +5,7 @@ export const setSettings = (payload: {
   pageSize: number;
   graphic: number;
   fpscounter: number;
+  url:string,
   androidKeyboard: number;
   localhost: number;
   skip: number;
@@ -20,6 +21,11 @@ export const setSettingServer = (payload: {serverid: number}) =>
     payload: payload,
   } as const);
 
+export const setSettingUrl = (payload:{url:string}) =>
+  ({
+    type: 'SET_SETTING_URL',
+    payload: payload,
+  } as const);
 export const setModeType = (value: number) =>
   ({
     type: 'SET_MODE_TYPE',
@@ -67,6 +73,7 @@ export const setUserNameSetting = (payload: {userName: string}) =>
 type setUserNameSettingActionType = ReturnType<typeof setUserNameSetting>;
 type SetSettingServerActionType = ReturnType<typeof setSettingServer>;
 type SetSettingActionType = ReturnType<typeof setSettings>;
+type SetSettingUrlActionType = ReturnType<typeof setSettingUrl>;
 type SetSettingFPSActionType = ReturnType<typeof setSettingFps>;
 type SetSettingPageSizeActionType = ReturnType<typeof setSettingPageSize>;
 type SetSettingGraphicActionType = ReturnType<typeof setSettingGraphic>;
@@ -83,4 +90,5 @@ export type SettingActionsType =
   | SetSettingGraphicActionType
   | SetSettingFpsCounterActionType
   | SetModeTypeActionType
+  | SetSettingUrlActionType
   | SetSettingKeyboardActionType;

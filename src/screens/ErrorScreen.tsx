@@ -6,19 +6,23 @@ import { useAppDispatch } from '../hooks/useAppDispatch';
 import { styles } from '../styles/LoaderStyle';
 import { fetchInitialApp } from '../thunks/appThunks';
 import { setInitial } from './../actions/appActions';
+import { InputLauncher } from '../components/InputLauncher/InputLauncher';
+import * as Icons from './../assets/svg';
+import { useAppSelector } from '../hooks/useAppSelector';
+import { selectSettings } from '../selectors/settingSelectors';
 
 type InitiationScreenType = NativeStackScreenProps<any>;
 
 export const ErrorScreen = React.memo(
   ({ navigation }: InitiationScreenType) => {
     const dispatch = useAppDispatch();
+    const settings = useAppSelector(selectSettings);
 
     const reloadHandler = useCallback(() => {
       dispatch(setInitial({ initial: false }));
       dispatch(fetchInitialApp());
       navigation.replace('Initiation');
     }, []);
-
     return (
       <LoaderContainer>
         <Text style={styles.title}>
@@ -29,6 +33,13 @@ export const ErrorScreen = React.memo(
         اتصال اینترنت دستگاه خود را بررسی کنید یا بعداً وارد سیستم شوید.
         </Text>
         <View style={styles.buttons}>
+          <InputLauncher
+            Icon={Icons.DownloadSvg}
+            title={'ادرس سرور'}
+            value={settings.url}
+            onChangeText={reloadHandler}
+            placeholder={"http://127.0.0.1"}
+          />
           <ButtonLauncher
             btnWidth={'100%'}
             background={'#5476db'}
